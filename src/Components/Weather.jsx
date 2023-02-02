@@ -9,24 +9,24 @@ export default function Weather() {
     const [inputCity, setInputcity] = useState("");
     const [gradus, setGradus] = useState(false);
     const [data, setData] = useState({});
-    const [hours,setHours]=useState()
-    const [minut,setMinut]=useState()
-    const [second,setSecond]=useState()
-    const [loading,setLoading]=useState(false)
-    const NewDate=()=>{
-        let date=new Date();
+    const [hours, setHours] = useState()
+    const [minut, setMinut] = useState()
+    const [second, setSecond] = useState()
+    const [loading, setLoading] = useState(false)
+    const NewDate = () => {
+        let date = new Date();
         setHours(date.getHours());
         setMinut(date.getMinutes());
         setSecond(date.getSeconds());
 
     }
-   useEffect(()=>{
-    setInterval(() => {
-        NewDate();
-    }, 1000);
-   },[])
-    
-    
+    useEffect(() => {
+        setInterval(() => {
+            NewDate();
+        }, 1000);
+    }, [])
+
+
     const tempt = "°C";
     const getWeather = (city) => {
         if (!city) return
@@ -68,9 +68,9 @@ export default function Weather() {
         getWeather(inputCity)
         setInputcity("");
         setGradus(true)
-        
+
         console.log(data.length);
-        
+
     }
     return (
         <div className="weather">
@@ -107,9 +107,9 @@ export default function Weather() {
                                             <h6>{hours}:{minut}:{second}</h6>
                                         </div>
                                         <div className="d-flex flex-column text-center mt-5 mb-4">
-                                            <h6 className="display-4 mb-0 font-weight-bold" style={{ color: '#1C2331' }}>{((data?.main?.temp)-273).toFixed(0)}°C </h6>
+                                            <h6 className="display-4 mb-0 font-weight-bold" style={{ color: '#1C2331' }}>{((data?.main?.temp) - 273).toFixed(0)}°C </h6>
                                             <span className="small" style={{ color: '#868B94' }}>Stormy</span>
-                                        </div> 
+                                        </div>
                                         <div className="d-flex align-items-center">
                                             <div className="flex-grow-1" style={{ fontSize: '1rem' }}>
                                                 <div><i className="fas fa-wind fa-fw" style={{ color: '#868B94' }} /> <span className="ms-1"> 40 km/h
@@ -130,8 +130,8 @@ export default function Weather() {
                     </div>
                 )}
             </section>
-           {loading&&<Loader/>} 
-           
+            {loading && <Loader />}
+
         </div>
     )
 }
