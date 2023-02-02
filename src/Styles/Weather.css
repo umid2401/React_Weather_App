@@ -1,31 +1,35 @@
-.weather .width1{
+.weather .width1 {
     width: 30%;
     border-radius: 12px;
     outline: none;
 }
-.weather .width2{
+
+.weather .width2 {
     width: 100px;
     border-radius: 12px;
     text-align: center;
     outline: none;
 }
-.weather{
+
+.weather {
     background-color: #4B515D;
     height: 110vh;
 }
-@media only screen and (max-width:632px){
-    .weather .width1{
+
+@media only screen and (max-width:632px) {
+    .weather .width1 {
         width: 55%;
         border-radius: 18px;
         margin-right: 0;
-        
+
     }
-    .weather .width2{
+
+    .weather .width2 {
         width: 70px;
         border-radius: 18px;
         margin-left: 0px;
         padding: 6px;
-        
-       
+
+
     }
 }
